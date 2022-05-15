@@ -7,10 +7,6 @@ body {
     background-color: #545454;
 }
 
-main {
-    
-}
-
 .title {
     text-align: center;
 }
@@ -43,6 +39,7 @@ input {
 .slider-slide-texts {
     display: flex;
     width: calc(100% * 4);
+    gap: 4rem;
     transition: 0.5s ease;
 }
 
@@ -60,6 +57,7 @@ input {
 .slider-mems {
     width: calc(100% * 4);
     display: flex;
+    gap: 1rem;
     transition: 0.5s ease;
 }
 
@@ -99,6 +97,13 @@ input {
     transition: 0.5s;
 }
 
+.control:active .button {
+    background-color: rgb(185, 103, 103);
+    border: 0.15rem solid rgb(185, 103, 103);
+}
+
+
+
 #mem-1:checked ~ .slider-footer-panel .slider-controls label[for='mem-1'] .button,
 #mem-2:checked ~ .slider-footer-panel .slider-controls label[for='mem-2'] .button,
 #mem-3:checked ~ .slider-footer-panel .slider-controls label[for='mem-3'] .button,
@@ -114,21 +119,26 @@ input {
 
 #mem-2:checked ~ .slide-wrapper .slider-mems,
 #mem-2:checked ~ .slider-footer-panel .text-wrapper .slider-slide-texts {
-    transform: translateX(-25%);
+    transform: translateX(calc(-25% - 1rem));
 }
 
 #mem-3:checked ~ .slide-wrapper .slider-mems,
 #mem-3:checked ~ .slider-footer-panel .text-wrapper .slider-slide-texts {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - 2rem));
 }
 
 #mem-4:checked ~ .slide-wrapper .slider-mems,
 #mem-4:checked ~ .slider-footer-panel .text-wrapper .slider-slide-texts {
-    transform: translateX(-75%);
+    transform: translateX(calc(-75% - 3rem));
 }
 
 
-@media (max-width: 550px) {
+@media (max-width: 660px) {
+
+    .slider-wrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 
     .slider-footer-panel {
         flex-direction: column;
