@@ -1,0 +1,118 @@
+main {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.title {
+    text-align: center;
+}
+
+.slider-wrapper {
+    width: 75rem;
+    height: 100rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+input {
+    display: none;
+}
+
+.slider-footer-panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-wrapper{
+    overflow: hidden;
+}
+
+.slider-slide-texts {
+    display: flex;
+    width: calc(100% * 4);
+    transition: 0.5s ease;
+}
+
+.slider-slide-text {
+    width: 100%;
+}
+
+.slide-wrapper {
+    overflow: hidden;
+}
+
+.slider-mems {
+    width: calc(100% * 4);
+    display: flex;
+    transition: 0.5s ease;
+}
+
+.slider-mem {
+    width: 100%;
+    height: 100%;
+    /*display: none;*/
+}
+
+/*.slider-mem:target {
+    display: block;
+}*/
+
+
+
+.slider-controls {
+    display: flex;
+    gap: 0.5rem;
+}    
+
+.button {
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: black;
+    border: 0.15rem solid black
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;    
+    cursor: pointer;
+}
+
+.control:hover {
+    transform: scale(1.7);
+    transition: 0.5s;
+}
+
+#mem-1:checked ~ .slider-footer-panel .slider-controls label[for='mem-1'] .button,
+#mem-2:checked ~ .slider-footer-panel .slider-controls label[for='mem-2'] .button,
+#mem-3:checked ~ .slider-footer-panel .slider-controls label[for='mem-3'] .button,
+#mem-4:checked ~ .slider-footer-panel .slider-controls label[for='mem-4'] .button   
+{
+  background: transparent;
+}
+
+#mem-1:checked ~ .slide-wrapper .slider-mems,
+#mem-1:checked ~ .slider-footer-panel .text-wrapper .slider-slide-texts {
+    transform: translateX(0);
+}
+
+#mem-2:checked ~ .slide-wrapper .slider-mems,
+#mem-2:checked ~ .slider-footer-panel .text-wrapper .slider-slide-texts {
+    transform: translateX(-25%);
+}
+
+#mem-3:checked ~ .slide-wrapper .slider-mems,
+#mem-3:checked ~ .slider-footer-panel .text-wrapper .slider-slide-texts {
+    transform: translateX(-50%);
+}
+
+#mem-4:checked ~ .slide-wrapper .slider-mems,
+#mem-4:checked ~ .slider-footer-panel .text-wrapper .slider-slide-texts {
+    transform: translateX(-75%);
+}
